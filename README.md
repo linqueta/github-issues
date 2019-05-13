@@ -46,26 +46,8 @@ This test has the goal to make a complete api for receive, save and get some dat
     The route must return all repositories data sorted ascending by the Github created at
 
     Response structure:
-    ```
-      [
-        {
-          "id": 135493233,
-          "name": "Hello-World",
-          "clone_url": "https://github.com/Codertocat/Hello-World.git",
-          "owner": "Codertocat",
-          "created_at": "2018-05-30T20:18:04Z",
-          "updated_at": "2018-05-30T20:18:10Z"
-        }
-      ]
-    ```
-    * The fields id, created_at and updated_at are from Github
-
-  - GET /repositories/:repository_id
-
-    The route must return the data about one repository. If the repository doesn't exist must be returned a http_code 404
-
-    Response structure:
-    ```
+    ```javascript
+    [
       {
         "id": 135493233,
         "name": "Hello-World",
@@ -74,6 +56,24 @@ This test has the goal to make a complete api for receive, save and get some dat
         "created_at": "2018-05-30T20:18:04Z",
         "updated_at": "2018-05-30T20:18:10Z"
       }
+    ]
+    ```
+    * The fields id, created_at and updated_at are from Github
+
+  - GET /repositories/:repository_id
+
+    The route must return the data about one repository. If the repository doesn't exist must be returned a http_code 404
+
+    Response structure:
+    ```javascript
+    {
+      "id": 135493233,
+      "name": "Hello-World",
+      "clone_url": "https://github.com/Codertocat/Hello-World.git",
+      "owner": "Codertocat",
+      "created_at": "2018-05-30T20:18:04Z",
+      "updated_at": "2018-05-30T20:18:10Z"
+    }
     ```
     * The fields id, created_at, updated_at and repository_id are from Github
 
