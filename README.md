@@ -43,9 +43,13 @@ This test has the goal to make a complete api for receive, save and get some dat
 - You must develop a REST api with some routes, they are:
   - GET /repositories
 
-    The route must return all repositories data sorted ascending by the Github created at
+    The route must return all repositories data sorted ascending by the Github created at. Follow an example bellow:
 
-    Response structure:
+    Request:
+    ```
+    GET /repositories
+    ```
+    Response:
     ```javascript
     [
       {
@@ -62,9 +66,13 @@ This test has the goal to make a complete api for receive, save and get some dat
 
   - GET /repositories/:repository_id
 
-    The route must return all data about the repository. If the repository doesn't exist must be returned a http_code 404
+    The route must return all data about the repository. If the repository doesn't exist must be returned a http_code 404. Follow an example bellow:
 
-    Response structure:
+    Request:
+    ```
+    GET /repositories/135493233
+    ```
+    Response:
     ```javascript
     {
       "id": 135493233,
