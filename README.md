@@ -6,6 +6,8 @@ This test has the goal to make a complete api for receive, save and get some dat
 
 ### Tasks
 1. [Repository](#1-repository)
+2. [Github Webhook](#2-github-webhook)
+3. [Models](#3-models)
 
 ### 1. Repository
 
@@ -17,27 +19,24 @@ This test has the goal to make a complete api for receive, save and get some dat
 - You must integrate your api to receive data about your repository's issues by Github Webhook integration. You may see more about it [here](https://developer.github.com/webhooks)
 - For you receive data in localhost you could use [ngrok](https://ngrok.com/) as a vpn.
 
-### 4. Models
+### 3. Models
 - You must develop three models with their respective fields, they are:
   - Repository:
-    - external_id
+    - external_id (Github repository id)
     - name
     - clone_url
+    - owner (Github repository owner login)
     - external_created_at
     - external_updated_at
   - Issue
-    - external_id
+    - external_id (Github issue id)
     - url
     - title
     - external_created_at
     - external_updated_at
   - IssueAction
     - action
-    -
+    - sender (Github sender login)
 
-### 3. The api
-- You must develop some apis, they are:
-  - GET /repositories/:repository_id
-    The route must return informations about repository
 
 
