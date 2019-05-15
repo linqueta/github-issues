@@ -2,25 +2,31 @@
 
 ## The test
 
-This test has the goal to make a complete api for receive, save and get some data about github issues. You must do these tasks bellow:
+This test has the goal to make a complete API for receive, save and get some data about Github issues. You must do these tasks below:
 
 ### Tasks
-1. [Repository](#1-repository)
-2. [Github Webhook](#2-github-webhook)
-3. [Models](#3-models)
-4.
+1. [Instructions](#1-instructions)
+2. [Repository](#2-repository)
+3. [Github Webhook](#3-github-webhook)
+4. [Models](#4-models)
+5. [The api](#5-the-API)
+6. [Tests](#6-tests)
+7. [Extras](#7-extras)
 
-### 1. Repository
+### 1. Instructions
+- The test must be developed with Ruby on Rails and you may choose your best test suite. After you did all tasks, you must write instructions at least to run the API and to run the tests in another file with the name INSTRUCTIONS.md.
+
+### 2. Repository
 
 - Fork this repository with your account and do the tests using your forked repository
 - After you end the test, you must notify who contact you
 
-### 2. Github Webhook
+### 3. Github Webhook
 
-- You must integrate your api to receive data about your repository's issues by Github Webhook integration. You may see more about it [here](https://developer.github.com/webhooks)
-- For you receive data in localhost you could use [ngrok](https://ngrok.com/) as a vpn.
+- You must integrate your API to receive data about your repository's issues by Github Webhook integration. You may see more about it [here](https://developer.github.com/webhooks)
+- For you receive data in localhost you could use [ngrok](https://ngrok.com/) as a VPN
 
-### 3. Models
+### 4. Models
 - You must develop three models with their respective fields, they are:
   - Repository:
     - external_id (Github repository id)
@@ -39,11 +45,11 @@ This test has the goal to make a complete api for receive, save and get some dat
     - action
     - sender (Github sender login)
 
-### 4. The api
-- You must develop a REST api with some routes, they are:
+### 5. The API
+- You must develop a REST API with some routes, they are:
   - GET /repositories
 
-    The route must return all repositories data sorted ascending by the Github created at. Follow an example bellow:
+    The route must return all repositories data sorted ascending by the Github created at. Follow the example below:
 
     Request:
     ```
@@ -66,7 +72,7 @@ This test has the goal to make a complete api for receive, save and get some dat
 
   - GET /repositories/:repository_id
 
-    The route must return all data about the repository. If the repository doesn't exist must be returned a http_code 404. Follow an example bellow:
+    The route must return all data about the repository. If the repository doesn't exist must be returned a http_code 404. Follow the example below:
 
     Request:
     ```
@@ -107,6 +113,14 @@ This test has the goal to make a complete api for receive, save and get some dat
     }
     ```
     * The fields id, created_at, updated_at and repository_id are from Github
+    * The node "issues" must be sorted by its create date
+    * The node "actions" must be sorted by its notification date
 
+### 6. Tests
+- You must develop some tests for check controllers, webhook entrance and other things. You may choose how you will code it and what tests are necessary to ensure that all is working.
 
-
+### 7. Extras
+- All listed here isn't required in this test, but, these extras tasks may add points in your score. The extras tasks are:
+  - UI to list repositories and permit to find a repository and show its details
+  - GraphQL API to get and mutate repository and issues data
+  - Develop some CI to check automatically your tests
